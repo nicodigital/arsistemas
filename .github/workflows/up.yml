@@ -1,0 +1,16 @@
+name: ArSistemas Up
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout de repositorio
+        use: actions/checkout@1
+      - name: Delpoy para Siteground
+        use: easingthemes/ssh-deploy@main
+        env:
+          SSH_PRIVATE_KEY:
